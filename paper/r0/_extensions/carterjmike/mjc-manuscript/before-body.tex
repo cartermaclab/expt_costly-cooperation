@@ -1,0 +1,80 @@
+\begin{titlepage}
+
+\thispagestyle{fancy}
+
+$if(linestretch)$
+\begingroup
+\renewcommand{\baselinestretch}{$linestretch$}\normalsize
+$endif$
+
+\begin{center}
+
+\vspace*{2cm}
+
+{\bfseries $title$ \par}
+
+\vspace{1cm}
+
+$titlepage-author-string$ \par
+
+\vspace{0.5cm}
+
+$for(affiliations)$
+\textsuperscript{$affiliations.id$}$affiliations.name$ \par
+$endfor$
+
+\vspace{5cm}
+
+{\bfseries Author Note \par}
+
+\vspace{0.5cm}
+
+\end{center}
+
+\raggedright
+
+$for(by-author)$
+\hspace*{1.27cm}$by-author.name.literal$$if(by-author.orcid)$ \orcidlink{$by-author.orcid$} \url{https://orcid.org/$by-author.orcid$}$endif$ \par
+$endfor$
+
+$if(authornote)$
+\hspace*{1.27cm}$authornote$
+\par
+$endif$
+
+$if(credit)$
+\hspace*{1.27cm}$credit$
+\par
+$endif$
+
+$if(correspondence)$
+\hspace*{1.27cm}$correspondence$
+\par
+$endif$
+
+\clearpage
+
+$if(abstract)$
+\section{Abstract}
+$abstract$
+$endif$
+
+$if(keywords)$
+\par\hspace*{1.27cm}\emph{Keywords:}
+$for(keywords)$
+$keywords$$sep$, $endfor$
+\par
+$endif$
+
+$if(pubsig)$
+\textbf{\emph{Public Significance Statement}}\newline
+$pubsig$
+$endif$
+
+$if(linestretch)$
+\endgroup
+$endif$
+
+\end{titlepage}
+
+\addtocounter{page}{1}

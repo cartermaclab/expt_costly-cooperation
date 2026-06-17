@@ -1,0 +1,24 @@
+title: mjc-manuscript
+author: Michael J. Carter
+version: 0.0.1
+quarto-required: ">=1.6.0"
+contributes: 
+  formats: 
+    pdf:
+      documentclass: article
+      pdf-engine: xelatex
+      papersize: letter
+      fontsize: 11pt
+      geometry:
+        - left=2.54cm
+        - bottom=2.54cm
+        - top=2.54cm
+        - right=2.54cm
+        #- includehead
+      linestretch: 2
+      #mainfont: Times New Roman
+      #indent: true
+      template-partials:
+        - after-body.tex
+        - before-body.tex
+        - before-title.tex
