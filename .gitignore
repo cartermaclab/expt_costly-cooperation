@@ -2,6 +2,9 @@
 .DS_STORE
 .DS_Store
 
+# dumb tiff for images
+*.tiff
+
 # History files
 .Rhistory
 .Rapp.history
