@@ -32,19 +32,24 @@ expt2_choice_descriptives <- expt2_choices_p |>
   ) |>
   dplyr::ungroup()
 
-#-- [[ Test proportion of together choices against 50% chance level ]]
-set.seed(1234)
-WRS2::onesampb(
-  x = expt2_choices_p$proportion[expt2_choices_p$trial_mode == "4"],
-  est = "median",
-  nv = 0.5
-)
-##-- Robust location estimate: 0.4778
-##-- 0.95% confidence interval: 0.3667 0.5389
-##-- p-value: 0.518
-
 
 #-- [ PROPORTION OF TOGETHER CHOICES BY BOX NUMBER]
+
+#-- [[ Test proportion of together choices against 50% chance level and compute
+#----- effect size ]]
+
+wilcox.test(
+  expt2_choices_p$proportion[expt2_choices_p$trial_mode == "4"],
+  mu = 0.5,
+  conf.int = TRUE
+)
+##-- V = 493, p = 0.1644
+
+rcompanion::wilcoxonOneSampleR(
+  expt2_choices_p$proportion[expt2_choices_p$trial_mode == "4"],
+  mu = 0.5,
+  ci = TRUE)
+##-- r = -0.198, [95 CI: -0.447, 0.0648]
 
 #-- [[ Omnibus test ]]
 expt2_prop_together_aov <- afex::aov_ez(

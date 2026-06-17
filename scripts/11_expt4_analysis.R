@@ -32,19 +32,24 @@ expt4_choice_descriptives <- expt4_choices_p |>
   ) |>
   dplyr::ungroup()
 
-#-- [[ Test proportion of bimanual choices against 50% chance level ]]
-set.seed(1234)
-WRS2::onesampb(
-  x = expt4_choices_p$proportion[expt4_choices_p$trial_mode == "4"],
-  est = "median",
-  nv = 0.5,
-)
-##-- Robust location estimate: 0.1889
-##-- 0.95% confidence interval: 0.0722 0.2833
-##-- p-value: 0.002
-
 
 #-- [ PROPORTION OF BIMANUAL CHOICES BY BOX NUMBER]
+
+#-- [[ Test proportion of bimanual choices against 50% chance level and compute
+#----- effect size ]]
+
+wilcox.test(
+  choices_p$proportion[choices_p$trial_mode == "4"],
+  mu = 0.5,
+  conf.int = TRUE
+)
+##-- V = 14, p < 0.001
+
+rcompanion::wilcoxonOneSampleR(
+  choices_p$proportion[choices_p$trial_mode == "4"],
+  mu = 0.5,
+  ci = TRUE)
+##-- r = -0.76, [95 CI: -0.87, -0.543]
 
 #-- [[ Omnibus test ]]
 expt4_prop_bimanual_aov <- afex::aov_ez(
