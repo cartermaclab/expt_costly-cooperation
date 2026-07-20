@@ -150,7 +150,8 @@
 \usepackage{float}
 \usepackage{colortbl}
 \usepackage{pdflscape}
-\usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{xltabular}
 \usepackage{threeparttable}
 \usepackage{threeparttablex}
 \usepackage[normalem]{ulem}
@@ -374,40 +375,10 @@ Cashaback \orcidlink{0000-0002-8642-6648} \url{https://orcid.org/0000-0002-8642-
 \hspace*{1.27cm}Michael J.
 Carter \orcidlink{0000-0002-0675-4271} \url{https://orcid.org/0000-0002-0675-4271} \par
 
-\hspace*{1.27cm}Data and scripts can be accessed at
-\url{https://doi.org/10.17605/OSF.IO/FQ3MZ} or
-\url{https://github.com/cartermaclab/expt_costly-cooperation}. All
-authors declare no conflicts of interest. MJC was supported by the NSERC
-(RGPIN-2018-05589) and McMaster University. ML was supported by an
-Ontario Graduate Scholarship. JGAC was supported by the NSF (2434966).
-Rakshith Lokesh was at the Department of Biomedical Engineering,
-University of Delaware at the start of this project. We thank
-Dr.~Arianna Curioni for methodological clarifications about their
-protocol when we were programming our version of the box-clearing task.
-Data from Experiment 1 was presented at the 2024 North American Society
-for the Psychology of Sport and Physical Activity and shared as a
-preprint (\url{https://doi.org/10.31234/osf.io/3qaeu_v3}).
+\hspace*{1.27cm}Rakshith Lokesh was at the Department of Biomedical
+Engineering, University of Delaware at the start of this project.
 \par
 
-\hspace*{1.27cm}Mikayla Lalli played a lead role in conceptualization,
-data curation, formal analysis, investigation, methodology, project
-administration, supervision, visualization, writing-original draft, and
-writing-review and editing. Nour Al Afif played an equal role in
-conceptualization, a supporting role in formal analysis, investigation,
-and writing-review and editing. Jiaqiao Tang played a supporting role in
-formal analysis, investigation, and writing-review and editing. Michael
-M. Croteau played a supporting role in formal analysis, investigation,
-and writing-review and editing. Rakshith Lokesh played a lead role in
-software and a supporting role in methodology and writing-review and
-editing. Scott Rathwell played a supporting role in methodology and
-writing-review and editing. Joshua G.A. Cashaback played a lead role in
-conceptualization and methodology, and a supporting role in
-writing-original draft and writing-review and editing. Michael J. Carter
-played a lead role in conceptualization, funding acquisition,
-methodology, supervision, validation, writing-original draft,
-writing-review and editing, and a supporting role in formal analysis and
-project administration.
-\par
 
 \hspace*{1.27cm}Correspondence concerning this article should be
 addressed to Michael J. Carter or Mikayla Lalli, Department of
@@ -469,10 +440,6 @@ easier option.
 \addtocounter{page}{1}
 
 \setstretch{2}
-\section{Tradeoffs between instrumental utility and social rewards shape
-preferences for costly
-cooperation}\label{tradeoffs-between-instrumental-utility-and-social-rewards-shape-preferences-for-costly-cooperation}
-
 When choosing between action alternatives, it has been suggested that
 individuals weigh the costs they will incur against the potential
 benefits they could receive (Gallivan et al., 2018; Gordon et al., 2021;
@@ -565,15 +532,13 @@ reward value to performing actions with others.
 
 \section{Methods}\label{methods}
 
-\subsection{Transparency and Openness}\label{transparency-and-openness}
-
 We report how we determined our sample size, all data exclusions (if
 any), all manipulations, and all measures in the study (Simmons et al.,
 2012). Data and analysis scripts are available at
 \url{https://github.com/cartermaclab/expt_costly-cooperation} OR
 \url{https://doi.org/10.17605/OSF.IO/FQ3MZ}. Experiment 1 was
-pre-registered (\url{https://doi.org/10.17605/OSF.IO/EVDP5}) and
-Experiments 2-4 were not pre-registered.
+preregistered (\url{https://doi.org/10.17605/OSF.IO/EVDP5}) and
+Experiments 2-4 were not preregistered.
 
 \subsection{Participants}\label{participants}
 
@@ -808,12 +773,12 @@ are always reported when appropriate. Generalized eta squared
 \((\eta_{G}^{2})\) is reported as an effect size for all omnibus tests.
 Post-hoc comparisons were performed using the Holm-Bonferroni approach
 to adjust for multiple comparisons. Statistical analyses were conducted
-using R (Version 4.6.0, R Core Team, 2024) and the R-packages
+using R (Version 4.6.1, R Core Team, 2024) and the R-packages
 \emph{afex} (Version 1.5.1, Singmann et al., 2024), \emph{easystats}
 (Version 0.7.6, Lüdecke et al., 2022), \emph{emmeans} (Version 2.0.3,
 Lenth, 2024), \emph{grateful} (Version 0.3.0, Rodriguez-Sanchez \&
 Jackson, 2025), \emph{here} (Version 1.0.2, Müller, 2025), \emph{Hmisc}
-(Version 5.2.5, Harrell Jr, 2025), \emph{kableExtra} (Version 1.4.0,
+(Version 5.2.5, Harrell Jr, 2025), \emph{kableExtra} (Version 1.4.1,
 Zhu, 2024), \emph{patchwork} (Version 1.3.2, Pedersen, 2024),
 \emph{rcompanion} (Version 2.5.2, Mangiafico, 2024), \emph{renv}
 (Version 1.2.3, Ushey \& Wickham, 2024), and \emph{tidyverse} (Version
@@ -1406,6 +1371,65 @@ these preferences are highly individualized.
 
 \clearpage
 
+\noindent  \textbf{Author contributions} \hspace{0.5em}
+Conceptualization: Mikayla Lalli, Nour Al Afif, Joshua G.A. Cashaback,
+Michael J. Carter; Data curation: Mikayla Lalli, Nour Al Afif; Formal
+analysis: Mikayla Lalli, Nour Al Afif, Jiaqiao Tang, Michael M. Croteau,
+Michael J. Carter; Funding acquisition: Joshua G.A. Cashaback, Michael
+J. Carter; Investigation: Mikayla Lalli, Nour Al Afif, Jiaqiao Tang,
+Michael M. Croteau; Methodology: Mikayla Lalli, Rakshith Lokesh, Scott
+Rathwell, Joshua G.A. Cashaback, Michael J. Carter; Project
+administration: Mikayla Lalli, Michael J. Carter; Software: Rakshith
+Lokesh; Supervision: Mikayla Lalli, Joshua G.A. Cashaback, Michael J.
+Carter; Validation: Nour Al Afif; Visualization: Mikayla Lalli, Joshua
+G.A. Cashaback, Michael J. Carter; Writing - original draft: Mikayla
+Lalli, Joshua G.A. Cashaback, Michael J. Carter; Writing - review \&
+editing: Mikayla Lalli, Nour Al Afif, Jiaqiao Tang, Michael M. Croteau,
+Rakshith Lokesh, Scott Rathwell, Joshua G.A. Cashaback, Michael J.
+Carter.
+
+\vspace{5pt}
+
+\noindent \textbf{Funding} \hspace{0.5em} This work was supported by an
+Ontario Graduate Scholarship (ML), the National Science Foundation
+(JGAC: 2434966), McMaster University (MJC), and the Natural Sciences and
+Engineering Research Council of Canada (MJC: RGPIN-2018-05589 and
+RGPIN-2026-07840).
+
+\vspace{5pt}
+
+\noindent \textbf{Data and code availability} \hspace{0.5em} Data and
+scripts can be accessed at \url{https://doi.org/10.17605/OSF.IO/FQ3MZ}
+or \url{https://github.com/cartermaclab/expt_costly-cooperation}.
+
+\vspace{5pt}
+
+\noindent \textbf{Acknowledgements} \hspace{0.5em} We thank Hibaa Hasan,
+Enuri Dissanayake, Vida Sussman, Shiv Peshwa, Heerud Seyedian,
+Jacqueline Zhang, Julia Luong, and Sydney Cooper for their help with
+data collection. We also thank Dr.~Arianna Curioni for methodological
+clarifications about their protocol when we were programming our version
+of the box-clearing task.
+
+\subsection{Statements and
+Declarations}\label{statements-and-declarations}
+
+\noindent \textbf{Ethics approval} \hspace{0.5em} Ethics approval was
+obtained McMaster University's Research Ethics Board.
+
+\vspace{5pt}
+
+\noindent \textbf{Consent to participate} \hspace{0.5em} Informed
+consent was obtained from all individual participants included in all
+experiments.
+
+\vspace{5pt}
+
+\noindent \textbf{Competing interests} \hspace{0.5em} All authors
+declare no competing or conflicts of interests.
+
+\clearpage
+
 \section{References}\label{references}
 
 \protect\phantomsection\label{refs}
@@ -1777,7 +1801,7 @@ and pipe syntax}. \url{https://doi.org/10.32614/CRAN.package.kableExtra}
 \resetlinenumber
 
 \renewcommand{\thefigure}{S\arabic{figure}}
-\setcounter{figure}{1}
+\setcounter{figure}{0}
 
 \section{Supplementary 1}\label{supplementary-1}
 

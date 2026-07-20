@@ -40,9 +40,7 @@ execute:
   message: false
 linestreth: 1.5
 authornote: |
-   Data and scripts can be accessed at <https://doi.org/10.17605/OSF.IO/FQ3MZ> or <https://github.com/cartermaclab/expt_costly-cooperation>. All authors declare no conflicts of interest. MJC was supported by the NSERC (RGPIN-2018-05589) and McMaster University. ML was supported by an Ontario Graduate Scholarship. JGAC was supported by the NSF (2434966). Rakshith Lokesh was at the Department of Biomedical Engineering, University of Delaware at the start of this project. We thank Dr. Arianna Curioni for methodological clarifications about their protocol when we were programming our version of the box-clearing task. Data from Experiment 1 was presented at the 2024 North American Society for the Psychology of Sport and Physical Activity and shared as a preprint (<https://doi.org/10.31234/osf.io/3qaeu_v3>).
-credit: |
-  Mikayla Lalli played a lead role in conceptualization, data curation, formal analysis, investigation, methodology, project administration, supervision, visualization, writing-original draft, and writing-review and editing. Nour Al Afif played an equal role in conceptualization, a supporting role in formal analysis, investigation, and writing-review and editing. Jiaqiao Tang played a supporting role in formal analysis, investigation, and writing-review and editing. Michael M. Croteau played a supporting role in formal analysis, investigation, and writing-review and editing. Rakshith Lokesh played a lead role in software and a supporting role in methodology and writing-review and editing. Scott Rathwell played a supporting role in methodology and writing-review and editing. Joshua G.A. Cashaback played a lead role in conceptualization and methodology, and a supporting role in writing-original draft and writing-review and editing. Michael J. Carter played a lead role in conceptualization, funding acquisition, methodology, supervision, validation, writing-original draft, writing-review and editing, and a supporting role in formal analysis and project administration.
+  Rakshith Lokesh was at the Department of Biomedical Engineering, University of Delaware at the start of this project.
 correspondence: |
   Correspondence concerning this article should be addressed to Michael J. Carter or Mikayla Lalli, Department of Kinesiology, McMaster University, Hamilton ON, Canada, L8S 4K1. Email: cartem11@mcmaster.ca or lallim1@mcmaster.ca.
 abstract: |
@@ -60,8 +58,6 @@ format:
     keep-tex: true
 ---
 
-# `r rmarkdown::metadata$title`
-
 When choosing between action alternatives, it has been suggested that individuals weigh the costs they will incur against the potential benefits they could receive [@gallivan2018;@gordon2021;@kahneman2012;@shadmehr2016]. Indeed, individuals tend to optimize their decisions by choosing actions that maximize their rewards while minimizing their costs [e.g., @calalo2025;@jara-ettinger2016;@todorov2004]. This behavior is well captured in utility models such as the Naive Utility Calculus [@jara-ettinger2016;@jara-ettinger2020] wherein the utility of an action is equated to the rewards of successfully achieving the desired action outcome minus the costs incurred while acting. These evaluations are subjective and susceptible to social influences [@mosteller1951;@rangel2008]. Instrumental rewards related to the action outcome include the completion of the task itself, as well as additional rewards the actor may earn for successfully completing the task, such as money or points. Movement-related costs include energy expenditure and biomechanical factors associated with performing the action [@todorov2004;@moskowitz2023;@shadmehr2016;@cos2014;@cos2011]. Performing a joint action is more costly---both cognitively and motorically---than performing the same action alone as individuals must represent, predict, and/or monitor the performance of their partner [@knoblich2011;@sebanz2006;@sebanz2021;@sullivan2026]. Such coordinated actions therefore create opportunities for spatial and temporal errors between co-actors that do not occur when acting alone. An open question is how individuals decide to engage or not engage in a joint action, and whether this decision is based on principles of optimization and utility.
 
 Curioni and colleagues [-@curioni2022] recently explored this question in a series of experiments using a virtual "box clearing" task where it was instrumentally more costly to perform the task with a partner compared to alone. When the task was performed alone, an individual would clear boxes as quickly as possible by tapping them and could clear the boxes in any order. When the task was performed together, the total number of boxes was divided evenly between participants and arranged identically. Without communicating or looking at the other person’s workspace, the partners had to clear boxes as quickly as possible by tapping the *same* box within a pre-specified synchrony threshold (e.g., 200 ms). The additional coordination elements of the together condition made completing the task via joint action suboptimal. Yet, on the trials where the participant in the Decision-maker role could choose to complete the task alone or together, participants showed a consistent preference for cooperation across experiments. In control experiments where individuals chose between completing the same “box clearing” task either unimanually or bimanually, individuals preferred to complete the task unimanually. That is, participants chose the less costly and more optimal way to perform the task. As bimanual actions are thought to be representative of interpersonal actions from a coordination perspective [e.g., @kourtis2014; @schmidt2008], the data from @curioni2022 strongly suggest that social factors inherent to joint actions, such as a higher intrinsic reward value assigned to cooperation, may bias the computation of the utility of performing a task with another person. In their three joint action experiments, participants were always positioned beside each other (shoulder-to-shoulder) and performed the task on the same touchscreen device, but within their respective workspaces that were created by virtually dividing the touchscreen in two equal halves. This physical proximity of the participants may have created social pressure for the Decision-maker to engage in costly joint action, possibly through a sense of commitment [e.g., @michael2016;@michael2016a] and/or from a need to manage one’s reputation [e.g., @nowak2005].
@@ -71,9 +67,7 @@ Here, we build on the work of Curioni and colleagues to further test the finding
 
 # Methods
 
-## Transparency and Openness
-
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study [@simmons2012]. Data and analysis scripts are available at <https://github.com/cartermaclab/expt_costly-cooperation> OR <https://doi.org/10.17605/OSF.IO/FQ3MZ>. Experiment 1 was pre-registered (<https://doi.org/10.17605/OSF.IO/EVDP5>) and Experiments 2-4 were not pre-registered.
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study [@simmons2012]. Data and analysis scripts are available at <https://github.com/cartermaclab/expt_costly-cooperation> OR <https://doi.org/10.17605/OSF.IO/FQ3MZ>. Experiment 1 was preregistered (<https://doi.org/10.17605/OSF.IO/EVDP5>) and Experiments 2-4 were not preregistered.
 
 ## Participants
 
@@ -122,7 +116,7 @@ The task, apparatus, and procedures matched Experiment 3, with two exceptions. F
 
 ## Data Analysis
 
-Alpha was set to .05 for all statistical tests, which are described below. Corrected degrees of freedom using the Greenhouse-Geisser method are always reported when appropriate. Generalized eta squared $(\eta_{G}^{2})$ is reported as an effect size for all omnibus tests. Post-hoc comparisons were performed using the Holm-Bonferroni approach to adjust for multiple comparisons. Statistical analyses were conducted using R [Version 4.6.0, @rcoreteam2024] and the R-packages *afex* [Version 1.5.1, @singmann2024], *easystats* [Version 0.7.6, @ludecke2022], *emmeans* [Version 2.0.3, @lenth2024], *grateful* [Version 0.3.0, @rodriguez-sanchez2025], *here* [Version 1.0.2, @muller2025], *Hmisc* [Version 5.2.5, @harrell2025], *kableExtra* [Version 1.4.0, @zhu2024], *patchwork* [Version 1.3.2, @pedersen2024], *rcompanion* [Version 2.5.2, @mangiafico2024], *renv* [Version 1.2.3, @ushey2024], and *tidyverse* [Version 2.0.0, @wickham2019] were used in this project.
+Alpha was set to .05 for all statistical tests, which are described below. Corrected degrees of freedom using the Greenhouse-Geisser method are always reported when appropriate. Generalized eta squared $(\eta_{G}^{2})$ is reported as an effect size for all omnibus tests. Post-hoc comparisons were performed using the Holm-Bonferroni approach to adjust for multiple comparisons. Statistical analyses were conducted using R [Version 4.6.1, @rcoreteam2024] and the R-packages *afex* [Version 1.5.1, @singmann2024], *easystats* [Version 0.7.6, @ludecke2022], *emmeans* [Version 2.0.3, @lenth2024], *grateful* [Version 0.3.0, @rodriguez-sanchez2025], *here* [Version 1.0.2, @muller2025], *Hmisc* [Version 5.2.5, @harrell2025], *kableExtra* [Version 1.4.1, @zhu2024], *patchwork* [Version 1.3.2, @pedersen2024], *rcompanion* [Version 2.5.2, @mangiafico2024], *renv* [Version 1.2.3, @ushey2024], and *tidyverse* [Version 2.0.0, @wickham2019] were used in this project.
 
 ### Choice Data
 
@@ -276,6 +270,41 @@ A possible limitation of our experiment is our use of a convenience sample, mean
 
 In conclusion, despite not finding a strong preference for costly joint action, the proportion of choosing to perform the task alone were much lower than would be expected if these decisions were solely guided by principles of optimization and utility, as seen when decisions were made in a non-social context. Our behavioral and questionnaire data add further support to the idea that additional rewards are derived from the social nature of joint action [e.g., @curioni2022] and that these preferences are highly individualized.
 
+\clearpage
+
+\noindent 
+**Author contributions** \hspace{0.5em} Conceptualization: Mikayla Lalli, Nour Al Afif, Joshua G.A. Cashaback, Michael J. Carter; Data curation: Mikayla Lalli, Nour Al Afif; Formal analysis: Mikayla Lalli, Nour Al Afif, Jiaqiao Tang, Michael M. Croteau, Michael J. Carter; Funding acquisition: Joshua G.A. Cashaback, Michael J. Carter; Investigation: Mikayla Lalli, Nour Al Afif, Jiaqiao Tang, Michael M. Croteau; Methodology: Mikayla Lalli, Rakshith Lokesh, Scott Rathwell, Joshua G.A. Cashaback, Michael J. Carter; Project administration: Mikayla Lalli, Michael J. Carter; Software: Rakshith Lokesh; Supervision: Mikayla Lalli, Joshua G.A. Cashaback, Michael J. Carter; Validation: Nour Al Afif; Visualization: Mikayla Lalli, Joshua G.A. Cashaback, Michael J. Carter; Writing - original draft: Mikayla Lalli, Joshua G.A. Cashaback, Michael J. Carter; Writing - review & editing: Mikayla Lalli, Nour Al Afif, Jiaqiao Tang, Michael M. Croteau, Rakshith Lokesh, Scott Rathwell, Joshua G.A. Cashaback, Michael J. Carter.
+
+\vspace{5pt}
+
+\noindent
+**Funding** \hspace{0.5em} This work was supported by an Ontario Graduate Scholarship (ML), the National Science Foundation (JGAC: 2434966), McMaster University (MJC), and the Natural Sciences and Engineering Research Council of Canada (MJC: RGPIN-2018-05589 and RGPIN-2026-07840).
+
+\vspace{5pt}
+
+\noindent
+**Data and code availability** \hspace{0.5em} Data and scripts can be accessed at <https://doi.org/10.17605/OSF.IO/FQ3MZ> or <https://github.com/cartermaclab/expt_costly-cooperation>.
+
+\vspace{5pt}
+
+\noindent
+**Acknowledgements** \hspace{0.5em} We thank Hibaa Hasan, Enuri Dissanayake, Vida Sussman, Shiv Peshwa, Heerud Seyedian, Jacqueline Zhang, Julia Luong, and Sydney Cooper for their help with data collection. We also thank Dr. Arianna Curioni for methodological clarifications about their protocol when we were programming our version of the box-clearing task.
+
+
+## Statements and Declarations
+
+\noindent
+**Ethics approval** \hspace{0.5em} Ethics approval was obtained McMaster University's Research Ethics Board.
+
+\vspace{5pt}
+
+\noindent
+**Consent to participate** \hspace{0.5em} Informed consent was obtained from all individual participants included in all experiments.
+
+\vspace{5pt}
+
+\noindent
+**Competing interests** \hspace{0.5em} All authors declare no competing or conflicts of interests.
 
 \clearpage
 
@@ -289,7 +318,7 @@ In conclusion, despite not finding a strong preference for costly joint action, 
 \resetlinenumber
 
 \renewcommand{\thefigure}{S\arabic{figure}}
-\setcounter{figure}{1}
+\setcounter{figure}{0}
 
 # Supplementary 1
 
